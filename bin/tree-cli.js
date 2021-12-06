@@ -17,7 +17,7 @@ program
     });
 
 program
-    .version('1.0.2')
+    .version('1.0.1')
     .option('-d, --dir <path>', 'the directory path you want to render by tree')
     .option('-c, --color [color]', 'tree’s color which output to the console', 'white')
     .option('-o, --out <path>', 'write the tree to a new file path')

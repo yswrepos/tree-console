@@ -1,6 +1,6 @@
 {
   "name": "tree-console",
-  "version": "1.0.3",
+  "version": "1.0.1",
   "description": "Output a directory tree to console",
   "main": "./bin/tree-cli.js",
   "private": false,
@@ -23,13 +23,13 @@
   "keywords": [
     "tree",
     "console",
-    "node",
-    "terminal",
     "cli",
-    "tree-console",
-    "console-tree",
     "tree-cli",
-    "cli-tree"
+    "cli-tree",
+    "console-tree",
+    "tree-console",
+    "node",
+    "terminal"
   ],
   "dependencies": {
     "chalk": "^4.1.2",

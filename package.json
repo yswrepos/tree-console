@@ -1,0 +1,42 @@
+{
+  "name": "tree-console",
+  "version": "1.0.3",
+  "description": "Output a directory tree to console",
+  "main": "./bin/tree-cli.js",
+  "private": false,
+  "bin": {
+    "tree-cli": "./bin/tree-cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "egsee",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/egsee/tree-console.git"
+  },
+  "homepage": "https://github.com/egsee/tree-console#readme",
+  "bugs": {
+    "url": "https://github.com/egsee/tree-console/issues"
+  },
+  "keywords": [
+    "tree",
+    "console",
+    "node",
+    "terminal",
+    "cli",
+    "tree-console",
+    "console-tree",
+    "tree-cli",
+    "cli-tree"
+  ],
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^8.3.0",
+    "fs-extra": "^10.0.0"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  }
+}

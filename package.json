@@ -1,6 +1,6 @@
 {
   "name": "tree-console",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "A CLI tool with Node.js. Lists directory content in a tree structure",
   "main": "./bin/tree-cli.js",
   "private": false,

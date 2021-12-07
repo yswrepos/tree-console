@@ -1,7 +1,7 @@
 {
   "name": "tree-console",
   "version": "1.0.1",
-  "description": "Output a directory tree to console",
+  "description": "A CLI tool with Node.js. Lists directory content in a tree structure",
   "main": "./bin/tree-cli.js",
   "private": false,
   "bin": {
@@ -37,6 +37,6 @@
     "fs-extra": "^10.0.0"
   },
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">= 12"
   }
 }

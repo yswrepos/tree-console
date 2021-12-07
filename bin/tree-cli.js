@@ -73,10 +73,7 @@ function writeTreeToFile (filename, outputContent) {
     var writeContent = outputContent;
 
     if (ext === 'md') {
-        var codeStr = '```';
-        writeContent = `${codeStr}
-${outputContent}
-${codeStr}`;
+        writeContent = '```' + "\n\r" + $outputContent + "\n\r" + '```';
     }
 
     fs.writeFile(filename, writeContent, (err) => {

@@ -1,7 +1,7 @@
-tree-console
-========
-
 <div align=right><a href="README.md"><font color=#42b983>English</font></a></div>
+
+# tree-console 
+
 <p>
     <a href="https://www.npmjs.com/package/tree-console">
         <img src="https://img.shields.io/npm/v/tree-console" alt="NPM Version"></a>

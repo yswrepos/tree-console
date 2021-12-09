@@ -20,7 +20,8 @@ program
     .version('1.1.0')
     .option('-d, --dir <directoryPath>', 'the directory path you want to render by tree')
     .option('-o, --out <filename>', 'write the tree to a new file')
-    // .option('-i, --ignore <ignoreFiles>', 'ignore the specified directory or file, they will not be listed')
+    .option('-i, --ignore <ignoreFiles>', 'ignore the specified directory or file, they will not be listed')
+    .option('-l, --level <level>', 'the depth of the directory tree')
     .option('-c, --color [color]', 'tree’s color which output to the terminal', 'white')
 
 
@@ -41,10 +42,7 @@ if (!valid) return;
 
 
 if (options.dir) {
-
-    var ignores = options.ignore ? options.ignore.split(',') : [];
-
-    var readDirToTree = new ReadDirToTree(options.dir, ignores);
+    var readDirToTree = new ReadDirToTree(options);
     var treeData = readDirToTree.getFileTree();
 
     var treeConsole = new TreeConsole(treeData);
@@ -78,7 +76,7 @@ function writeTreeToFile (filename, outputContent) {
 
     fs.writeFile(filename, writeContent, (err) => {
         if (err) {
-            console.log('\n[ERR]', chalk.red(`File create failure：${err}`));
+            console.log('\n[ERR]', chalk.red(`File create failure！${err}`));
         } else {
             console.log('\nFile create success！');
         }

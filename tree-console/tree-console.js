@@ -81,14 +81,14 @@ class TreeConsole {
         }
     }
 
-    getStringTree = () => this.getArrayTree().join('\n');
-
     getArrayTree = () => {
         this.#extendTreeData(this.treeData);
         this.#drawTree(this.treeData);
 
         return this.#renderData;
     }
+
+    getStringTree = () => this.getArrayTree().join('\n');
 }
 
 

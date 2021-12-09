@@ -2,19 +2,50 @@ const fs = require('fs-extra');
 const path = require('path');
 
 class ReadDirToTree {
-    dir;
+    rootDir;
     fileTree = [];
     ignores;
-    constructor(dir, ignores) {
-        this.dir = dir;
-        this.ignores = ignores || ['.DS_Store'];
+    level;
+
+    constructor({ dir, ignore, level }) {
+        this.rootDir = this.#getRootDir(dir);
+        this.ignores = ignore ? ignore.split(',') : [];
+        this.level = level || null;
     }
 
-    #ignoreHandle = (dirPath, dirName) => {
-        if(this.ignores.includes(dirName)){
-            return true;
+    #getRootDir = (dir) => {
+        var rootDir = path.join(process.cwd(), dir);
+        if (rootDir.slice(-1) === '/') {
+            rootDir = rootDir.slice(0, -1);
         }
-        return false;
+
+        return rootDir;
+    }
+
+    #getLevel = (dirPath) => {
+        if (dirPath === this.rootDir) return 1;
+        return dirPath.split(this.rootDir)[1].split('/').length;
+    }
+
+    #ignoreHandle = (dirPath, dirName, ignoreContent) => {
+        if (Object.prototype.toString.call(ignoreContent) === '[object Array]') {
+            for (var i = 0; i < this.ignores.length; i++) {
+                if (this.#ignoreHandle(dirPath, dirName, this.ignores[i])) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        ignoreContent = ignoreContent.trim();
+        if (!ignoreContent) return false;
+
+        if (ignoreContent.includes('/')) {
+            ignoreContent = ignoreContent.slice(-1) === '/' ? ignoreContent.slice(0, -1) : ignoreContent;
+            var name = ignoreContent.split('/').slice(-1)[0];
+            return dirPath.includes(ignoreContent) && name === dirName;
+        }
+        return ignoreContent === dirName;
     }
 
     #buildFileTree = (dir, arr) => {
@@ -23,9 +54,15 @@ class ReadDirToTree {
         const list = dir.split('/');
         let dirName = list[list.length - 1];
         let data = {
-            name: dirName
+            name: dirName,
+            level: this.#getLevel(dir)
         };
-        // var isIgnore = this.#ignoreHandle(dir, dirName);
+
+        var isIgnore = this.#ignoreHandle(dir, dirName, this.ignores);
+
+        if (isIgnore) return;
+
+        if (this.level && data.level > this.level) return;
 
         if (fs.statSync(dir).isDirectory()) {
             data.children = [];
@@ -34,12 +71,13 @@ class ReadDirToTree {
                 this.#buildFileTree(item, data.children);
             });
         }
-        
+
         arr.push(data);
+
     }
 
     getFileTree = () => {
-        this.#buildFileTree(this.dir, this.fileTree);
+        this.#buildFileTree(this.rootDir, this.fileTree);
         return this.fileTree;
     }
 }

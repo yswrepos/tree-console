@@ -13,7 +13,7 @@ tree-console
     <div align=right><a href="README.md"><font color=#42b983>English</font></a></div>
 </div>
 
-🌟 Tree-console 是一个极简的 [Node.js](https://nodejs.org) 命令行工具，可以使用 `tree-cli` 命令在终端输出指定目录的树型结构。
+Tree-console 是一个极简的 [Node.js](https://nodejs.org) 命令行工具，可以使用 `tree-cli` 命令在终端输出指定目录的树型结构。
 
 ### 安装
 

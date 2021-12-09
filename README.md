@@ -13,7 +13,7 @@ tree-console
     <div align=right><a href="README_zh.md"><font color=#42b983>中文</font></a></div>
 </div>
 
-🌟 Tree-console is a small, extremely simple CLI tool with [Node.js](https://nodejs.org). You can use `tree-cli` command to print out the directory tree structure in terminal.
+Tree-console is a small, extremely simple CLI tool with [Node.js](https://nodejs.org). You can use `tree-cli` command to print out the directory tree structure in terminal.
 
 
 ### Install

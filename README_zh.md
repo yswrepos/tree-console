@@ -1,18 +1,16 @@
 tree-console
 ========
 
-<div style="display: flex;justify-content: space-between;align-items: center;">
-    <p>
-        <a href="https://www.npmjs.com/package/tree-console">
-            <img src="https://img.shields.io/npm/v/tree-console" alt="NPM Version"></a>
-        <a href="https://www.npmjs.org/package/tree-console">
-            <img src="http://img.shields.io/npm/dm/tree-console.svg" alt="Downloads"></a>
-        <a href="https://www.npmjs.com/package/tree-console">
-            <img src="https://img.shields.io/npm/l/tree-console.svg?sanitize=true" alt="License"></a>
-    </p>
-    <div align=right><a href="README.md"><font color=#42b983>English</font></a></div>
-</div>
-
+<div align=right><a href="README.md"><font color=#42b983>English</font></a></div>
+<p>
+    <a href="https://www.npmjs.com/package/tree-console">
+        <img src="https://img.shields.io/npm/v/tree-console" alt="NPM Version"></a>
+    <a href="https://www.npmjs.org/package/tree-console">
+        <img src="http://img.shields.io/npm/dm/tree-console.svg" alt="Downloads"></a>
+    <a href="https://www.npmjs.com/package/tree-console">
+        <img src="https://img.shields.io/npm/l/tree-console.svg?sanitize=true" alt="License"></a>
+</p>
+    
 Tree-console 是一个极简的 [Node.js](https://nodejs.org) 命令行工具，可以使用 `tree-cli` 命令在终端输出指定目录的树型结构。
 
 ### 安装

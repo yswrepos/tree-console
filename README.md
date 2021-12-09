@@ -1,17 +1,15 @@
 tree-console 
 ========
 
-<div style="display: flex;justify-content: space-between;align-items: center;">
-    <p>
-        <a href="https://www.npmjs.com/package/tree-console">
-            <img src="https://img.shields.io/npm/v/tree-console" alt="NPM Version"></a>
-        <a href="https://www.npmjs.org/package/tree-console">
-            <img src="http://img.shields.io/npm/dm/tree-console.svg" alt="Downloads"></a>
-        <a href="https://www.npmjs.com/package/tree-console">
-            <img src="https://img.shields.io/npm/l/tree-console.svg?sanitize=true" alt="License"></a>
-    </p>
-    <div align=right><a href="README_zh.md"><font color=#42b983>中文</font></a></div>
-</div>
+<div align=right><a href="README_zh.md"><font color=#42b983>中文</font></a></div>
+<p>
+    <a href="https://www.npmjs.com/package/tree-console">
+        <img src="https://img.shields.io/npm/v/tree-console" alt="NPM Version"></a>
+    <a href="https://www.npmjs.org/package/tree-console">
+        <img src="http://img.shields.io/npm/dm/tree-console.svg" alt="Downloads"></a>
+    <a href="https://www.npmjs.com/package/tree-console">
+        <img src="https://img.shields.io/npm/l/tree-console.svg?sanitize=true" alt="License"></a>
+</p>
 
 Tree-console is a small, extremely simple CLI tool with [Node.js](https://nodejs.org). You can use `tree-cli` command to print out the directory tree structure in terminal.
 

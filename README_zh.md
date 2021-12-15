@@ -1,6 +1,6 @@
 # tree-console 
 
-<div align=right><a href="https://github.com/egsee/tree-console"><font color=#42b983>English</font></a></div>
+<div align=right><a href="https://github.com/egsee/tree-console" target="_blank"><font color=#42b983>English</font></a></div>
 <p>
     <a href="https://www.npmjs.com/package/tree-console">
         <img src="https://img.shields.io/npm/v/tree-console" alt="NPM Version"></a>

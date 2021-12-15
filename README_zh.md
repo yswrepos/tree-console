@@ -109,13 +109,13 @@ tree.getStringTree([
         ]
     }
 ], {
-    label: 'title',
-    children: 'items'
+    label: "title",
+    children: "items"
 })
 ```
 > getStringTree(array, [option])
-参数 option 的默认值是: {label: 'name', children: 'children'}
-
+>
+> 参数 option 的默认值是 {label: "name", children: "children"}
 
 ### 为什么选择 tree-console？
 

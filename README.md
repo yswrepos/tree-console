@@ -108,12 +108,13 @@ tree.getStringTree([
         ]
     }
 ], {
-    label: 'title',
-    children: 'items'
+    label: "title",
+    children: "items"
 })
 ```
 > getStringTree(array, [option])
-the option's default value is: {label: 'name', children: 'children'}
+>
+> the option's default value is {label: "name", children: "children"}
 
 ### Why tree-console?
  * 🌲 Lists directory content in a tree structure

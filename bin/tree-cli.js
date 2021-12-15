@@ -17,7 +17,7 @@ program
     });
 
 program
-    .version('1.1.3')
+    .version('1.2.1')
     .option('-d, --dir <directoryPath>', 'the directory path you want to render by tree')
     .option('-o, --out <filename>', 'write the tree to a new file')
     .option('-i, --ignore <ignoreFiles>', 'ignore file(s) or directory')

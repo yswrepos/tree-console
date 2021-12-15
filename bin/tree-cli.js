@@ -1,10 +1,10 @@
-#! /usr/bin/env node
+#!/usr/bin/env node
 
 var program = require('commander'),
     chalk = require('chalk'),
     fs = require('fs-extra'),
-    ReadDirToTree = require('../tree-console/read-dir-to-tree.js'),
-    TreeConsole = require('../tree-console/tree-console.js');
+    ReadDirToTree = require('../read-dir-to-tree.js'),
+    Tree = require('../tree.js');
 
 function errorColor (str) {
     return `\x1b[31m${str}\x1b[0m`;
@@ -17,12 +17,12 @@ program
     });
 
 program
-    .version('1.1.2')
+    .version('1.1.3')
     .option('-d, --dir <directoryPath>', 'the directory path you want to render by tree')
     .option('-o, --out <filename>', 'write the tree to a new file')
-    .option('-i, --ignore <ignoreFiles>', 'ignore the specified directory or file, they will not be listed')
+    .option('-i, --ignore <ignoreFiles>', 'ignore file(s) or directory')
     .option('-l, --level <level>', 'the depth of the directory tree')
-    .option('-c, --color [color]', 'tree’s color which output to the terminal', 'white')
+    .option('-c, --color [color]', 'enable color output', 'white')
 
 
 program.parse(process.argv);
@@ -38,25 +38,25 @@ function assert (condition, msg) {
 }
 
 var valid = assert(!options.out || (options.dir && options.out), "warn: option '-d, --dir <path>' missing");
-if (!valid) return;
 
+if (valid) {
+    if (options.dir) {
 
-if (options.dir) {
-    var readDirToTree = new ReadDirToTree(options);
-    var treeData = readDirToTree.getFileTree();
+        var treeData = ReadDirToTree.getFileTree(options);
 
-    var treeConsole = new TreeConsole(treeData);
-    var outputContent = treeConsole.getStringTree();
+        var outputContent = Tree.getStringTree(treeData);
 
-    var color = options.color || 'white';
+        var color = options.color || 'white';
 
-    console.log(chalk[color](outputContent));
+        console.log(chalk[color](outputContent));
 
-    if (options.out) {
-        writeTreeToFile(options.out, outputContent);
+        if (options.out) {
+            writeTreeToFile(options.out, outputContent);
+        }
+
     }
-
 }
+
 
 function writeTreeToFile (filename, outputContent) {
     var index = filename.lastIndexOf(".");

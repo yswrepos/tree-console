@@ -24,7 +24,7 @@ npm install tree-console -g
 
  `tree-cli` 命令用法如下:
 
-```sh
+```
 $ tree-cli -d ./tree-console --ignore node_modules,.git,.DS_Store
 
 ·

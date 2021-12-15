@@ -23,7 +23,7 @@ npm install tree-console -g
 
 You can run the `tree-cli` command in the shell like this:
 
-```sh
+```
 $ tree-cli -d ./tree-console --ignore node_modules,.git,.DS_Store
 
 ·
